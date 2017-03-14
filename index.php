@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="fb:app_id" content="1667228050231771"/>
+    <meta property="fb:app_id" content="1844993139106230"/>
     <meta property="fb:admins" content="jerezb"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Giovanni Origins"/>
@@ -139,7 +139,7 @@
     <script>
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '1667228050231771',
+                appId: '1844993139106230',
                 cookie: true,
                 xfbml: true,
                 version: 'v2.5'
@@ -201,7 +201,7 @@
             ctx.drawImage(this, 0, 0);
         };
 
-        imageObj.src = 'panda_dark.png';
+        imageObj.src = $(location).attr('href')+'/panda_dark.png';
 
         // Twitter oauth handler
         $.oauthpopup = function (options) {
@@ -259,7 +259,7 @@
         $('#shareTW').click(function () {
             var dataURL = $('#canvas')[0].toDataURL("image/png");
             $.oauthpopup({
-                path: './auth/twitter.php',
+                path: $(location).attr('href')+ '/auth/twitter.php',
                 callback: function () {
                     console.log(window.twit);
                     var data = new FormData();
@@ -273,7 +273,7 @@
                     // Post to Twitter as an update with
 
                     return $.ajax({
-                        url: './auth/share-on-twitter.php',
+                        url: $(location).attr('href')+'/auth/share-on-twitter.php',
                         type: 'POST',
                         data: data,
                         cache: false,
